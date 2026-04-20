@@ -57,14 +57,14 @@ spec:
       workspaces:
         - name: source
           workspace: pipeline-workspace
-        name: dockerconfig
+        - name: dockerconfig
           workspace: dockerconfig-ws
       taskRef:
         name: buildah
-      kind: ClusterTask
+        kind: ClusterTask
       params:
         - name: IMAGE
-          value: "us.icr.io/$(context.pipelineRun.namespace)/$(params.app-name)"
+          value: "us.icr.io/$(context.pipelineRun.namespace)/tax-calculator"
       runAfter:
         - tests
 
